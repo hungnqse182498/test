@@ -568,7 +568,7 @@
 
     <script>
         /* ==========================================
-           1. LOGIC BẢN ĐỒ LỊCH SỬ (GIỮ NGUYÊN)
+           1. LOGIC BẢN ĐỒ LỊCH SỬ (GIỮ NGUYÊN CỦA BẠN)
         ========================================== */
         const map = L.map('map', { zoomControl: false }).setView([10.7686, 106.7083], 4);
 
@@ -720,7 +720,7 @@
         });
 
         /* ==========================================
-           2. LOGIC VẼ MINDMAP BẰNG CODE MARKDOWN
+           2. LOGIC VẼ MINDMAP (ĐÃ SỬA ĐỂ ẨN TẤT CẢ CÁC NHÁNH)
         ========================================== */
         
         // Cấu trúc nội dung 10 mốc dạng Markdown
@@ -768,12 +768,19 @@
                 const transformer = new markmap.Transformer();
                 const { root } = transformer.transform(markdownData);
                 
-                markmapInstance = markmap.Markmap.create('#markmap-svg', {
-                    autoFit: true,
-                    style: (id) => `${id} * { font-family: 'Inter', sans-serif; }`,
-                }, root);
+                // Thêm thuộc tính cấu hình mở rộng ban đầu
+                const options = markmap.deriveOptions({
+                    initialExpandLevel: 0, // Đặt bằng 0 để thu gọn hoàn toàn toàn bộ nhánh con
+                    duration: 500          // Hiệu ứng bung/thu nhánh mượt mà hơn (500ms)
+                });
+
+                // Kết hợp style phông chữ của bạn
+                options.style = (id) => `${id} * { font-family: 'Inter', sans-serif; }`;
+                
+                markmapInstance = markmap.Markmap.create('#markmap-svg', options, root);
             } else {
-                // Resize lại cho khớp khung hình nếu đã mở trước đó
+                // Nếu bản đồ đã tồn tại, ép nó thu gọn về cấp 0 lại khi mở lại modal
+                markmapInstance.setOptions({ initialExpandLevel: 0 });
                 setTimeout(() => markmapInstance.fit(), 100);
             }
         }
