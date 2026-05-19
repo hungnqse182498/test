@@ -568,7 +568,7 @@
 
     <script>
         /* ==========================================
-           1. LOGIC BẢN ĐỒ LỊCH SỬ (GIỮ NGUYÊN CỦA BẠN)
+           1. LOGIC BẢN ĐỒ LỊCH SỬ (GIỮ NGUYÊN)
         ========================================== */
         const map = L.map('map', { zoomControl: false }).setView([10.7686, 106.7083], 4);
 
@@ -720,7 +720,7 @@
         });
 
         /* ==========================================
-           2. LOGIC VẼ MINDMAP (ĐÃ SỬA ĐỂ ẨN TẤT CẢ CÁC NHÁNH)
+           2. LOGIC VẼ MINDMAP BẰNG CODE MARKDOWN
         ========================================== */
         
         // Cấu trúc nội dung 10 mốc dạng Markdown
@@ -761,29 +761,23 @@
         let markmapInstance = null;
 
         btnMindmap.onclick = function() {
-            modal.style.display = "block";
-            
-            // Vẽ Mindmap nếu chưa được vẽ
-            if (!markmapInstance) {
-                const transformer = new markmap.Transformer();
-                const { root } = transformer.transform(markdownData);
-                
-                // Thêm thuộc tính cấu hình mở rộng ban đầu
-                const options = markmap.deriveOptions({
-                    initialExpandLevel: 0, // Đặt bằng 0 để thu gọn hoàn toàn toàn bộ nhánh con
-                    duration: 500          // Hiệu ứng bung/thu nhánh mượt mà hơn (500ms)
-                });
+    modal.style.display = "block";
+    
+    if (!markmapInstance) {
+        const transformer = new markmap.Transformer();
+        const { root } = transformer.transform(markdownData);
+        
+        markmapInstance = markmap.Markmap.create('#markmap-svg', {
+            autoFit: true,
+            initialExpandLevel: 1,
+            duration: 500,
+            style: (id) => `${id} * { font-family: 'Inter', sans-serif; }`,
+        }, root);
 
-                // Kết hợp style phông chữ của bạn
-                options.style = (id) => `${id} * { font-family: 'Inter', sans-serif; }`;
-                
-                markmapInstance = markmap.Markmap.create('#markmap-svg', options, root);
-            } else {
-                // Nếu bản đồ đã tồn tại, ép nó thu gọn về cấp 0 lại khi mở lại modal
-                markmapInstance.setOptions({ initialExpandLevel: 0 });
-                setTimeout(() => markmapInstance.fit(), 100);
-            }
-        }
+    } else {
+        setTimeout(() => markmapInstance.fit(), 100);
+    }
+}
 
         // Đóng Modal khi bấm nút X
         closeBtn.onclick = function() {
