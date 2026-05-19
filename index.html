@@ -761,23 +761,23 @@
         let markmapInstance = null;
 
         btnMindmap.onclick = function() {
-    modal.style.display = "block";
-    
-    if (!markmapInstance) {
-        const transformer = new markmap.Transformer();
-        const { root } = transformer.transform(markdownData);
+        modal.style.display = "block";
         
-        markmapInstance = markmap.Markmap.create('#markmap-svg', {
-            autoFit: true,
-            initialExpandLevel: 1,
-            duration: 500,
-            style: (id) => `${id} * { font-family: 'Inter', sans-serif; }`,
-        }, root);
+        if (!markmapInstance) {
+            const transformer = new markmap.Transformer();
+            const { root } = transformer.transform(markdownData);
+            
+            markmapInstance = markmap.Markmap.create('#markmap-svg', {
+                autoFit: true,
+                initialExpandLevel: 1,
+                duration: 500,
+                style: (id) => `${id} * { font-family: 'Inter', sans-serif; }`,
+            }, root);
 
-    } else {
-        setTimeout(() => markmapInstance.fit(), 100);
+        } else {
+            setTimeout(() => markmapInstance.fit(), 100);
+        }
     }
-}
 
         // Đóng Modal khi bấm nút X
         closeBtn.onclick = function() {
