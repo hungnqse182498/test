@@ -203,19 +203,29 @@
             overflow: hidden;
         }
 
-        .popup-slider img {
+        .popup-slider .slide-item {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
             opacity: 0;
             transition: opacity 0.6s ease-in-out;
         }
 
-        .popup-slider img.active {
+        .popup-slider .slide-item.active {
             opacity: 1;
+        }
+
+        .popup-slider .slide-item img,
+        .popup-slider .slide-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .popup-slider .slide-item video {
+            background: #000;
         }
 
         .popup-title {
@@ -377,7 +387,10 @@
 
             <div class="timeline-container">
                 <div class="section" id="m1" data-loc="[10.7686, 106.7083]" data-zoom="14"
-                    data-images="https://buulong.com.vn/wp-content/uploads/2026/03/lich-su-hinh-thanh-ben-nha-rong-4.jpg|https://buulong.com.vn/wp-content/uploads/2026/03/lich-su-hinh-thanh-ben-nha-rong-2.jpg">
+                    data-images="media/images/moc1/a1.jpg|
+                    media/images/moc1/a2.jpg|
+                    media/images/moc1/a3.jpg|
+                    media/images/moc1/a4.jpg">
                     <div class="tag-box">
                         <span class="year">05/06/1911</span>
                         <span class="location-tag">Bến Nhà Rồng - Sài Gòn</span>
@@ -392,7 +405,11 @@
                 </div>
 
                 <div class="section" id="m2" data-loc="[51.5074, -0.1278]" data-zoom="4"
-                    data-images="https://ttdn.vn/Uploads/2019/11/04/b7b3eebeedfc775d7e7e60b73c4eeae3_1.jpg|https://file1.dangcongsan.vn/data/0/images/2023/06/03/upload_1245/21-6a2.jpg">
+                    data-images="media/images/moc2/a1.jpg|
+                    media/images/moc2/a2.jpg|
+                    media/images/moc2/a3.jpg|
+                    media/images/moc2/a4.jpg|
+                    media/images/moc2/a5.jpg">
                     <div class="tag-box">
                         <span class="year">Giai đoạn 1911 – 1917</span>
                         <span class="location-tag">Các cường quốc phương Tây</span>
@@ -408,7 +425,11 @@
                 </div>
 
                 <div class="section" id="m3" data-loc="[48.8049, 2.1204]" data-zoom="13"
-                    data-images="https://image.nhandan.vn/w800/Uploaded/2026/xpviswda/2020_12_29/dh-tours_3.jpg|https://tulieuvankien.dangcongsan.vn/Uploads/2018/7/6/17/nguyen-ai-quoc-tai-phap-2.jpg">
+                    data-images="media/images/moc3/a1.jpg|
+                    media/images/moc3/a2.jpg|
+                    media/images/moc3/a3.jpg|
+                    media/images/moc3/a4.jpg|
+                    media/images/moc3/a5.jpg">
                     <div class="tag-box">
                         <span class="year">18/06/1919</span>
                         <span class="location-tag">Hội nghị Versailles - Pháp</span>
@@ -423,7 +444,10 @@
                 </div>
 
                 <div class="section" id="m4" data-loc="[48.8566, 2.3522]" data-zoom="12"
-                    data-images="https://bcp.cdnchinhphu.vn/Uploaded/nguyendieuhoa/2020_05_15/Nguyen-Ai-Quoc-doc-Luan-cuong-cua-Lenin.jpg">
+                    data-images="media/images/moc4/a1.jpg|
+                    media/images/moc4/a2.jpg|
+                    media/images/moc4/a3.jpg|
+                    media/images/moc4/a4.jpg|">
                     <div class="tag-box">
                         <span class="year">Tháng 7/1920</span>
                         <span class="location-tag">Paris - Pháp</span>
@@ -439,7 +463,10 @@
                 </div>
 
                 <div class="section" id="m5" data-loc="[47.3941, 0.6848]" data-zoom="12"
-                    data-images="https://image.nhandan.vn/w800/Uploaded/2026/xpviswda/2020_12_29/dh-tours_3.jpg|https://media.vov.vn/sites/default/files/styles/large/public/2020-12/dai_hoi_tours_1_1.jpg">
+                    data-images="media/images/moc5/a1.jpg|
+                    media/images/moc5/a2.jpg|
+                    media/images/moc5/a3.jpg|
+                    media/images/moc5/a4.jpg|">
                     <div class="tag-box">
                         <span class="year">Tháng 12/1920</span>
                         <span class="location-tag">Tours - Pháp</span>
@@ -450,7 +477,11 @@
                 </div>
 
                 <div class="section" id="m6" data-loc="[23.1291, 113.2644]" data-zoom="5"
-                    data-images="https://moc.gov.vn/Images/File_Uploaded/TinTuc/Nam2022/Thang3/09/images2180425_1b.JPG|https://hochiminh.vn/Uploads/2022/6/15/duong-kach-menh.jpg">
+                    data-images="media/images/moc6/a1.jpg|
+                    media/images/moc6/a2.jpg|
+                    media/images/moc6/a3.jpg|
+                    media/images/moc6/a4.jpg|
+                    media/images/moc6/a5.jpg">
                     <div class="tag-box">
                         <span class="year">1921 – 1929</span>
                         <span class="location-tag">Paris - Liên Xô - Quảng Châu</span>
@@ -470,7 +501,9 @@
                 </div>
 
                 <div class="section" id="m7" data-loc="[22.3193, 114.1694]" data-zoom="12"
-                    data-images="https://consular.mofa.gov.vn/Files/u2/2014/05/hcm30.jpg|https://baothanhhoa.vn/image/fckeditor/upload/2020/20200130/images/6.jpg">
+                    data-images="media/images/moc7/a1.png|
+                    media/images/moc7/a2.png|
+                    media/images/moc7/a3.png">
                     <div class="tag-box">
                         <span class="year">Đầu năm 1930</span>
                         <span class="location-tag">Cửu Long - Hồng Kông</span>
@@ -488,7 +521,13 @@
                 </div>
 
                 <div class="section" id="m8" data-loc="[22.8631, 106.0526]" data-zoom="14"
-                    data-images="https://image.vietnamlawmagazine.vn/vlm/Uploaded/2026/pizb_vlw/2021_01_28/hang-pac-bo.jpg|https://media.quocphongthudo.vn/files/dangquang/2021/01/27/bo-anh-tu-lieu-quy-nhan-ky-niem-80-nam-ngay-bac-ho-ve-nuoc-anh-3-152011.jpg">
+                    data-images="media/images/moc8/a1.jpg|
+                    media/images/moc8/a2.jpg|
+                    media/images/moc8/a3.jpg|
+                    media/images/moc8/a4.jpg|
+                    media/images/moc8/a5.jpg|
+                    media/images/moc8/a6.jpg|
+                    media/images/moc8/a7.jpg">
                     <div class="tag-box">
                         <span class="year">Tháng 5/1941</span>
                         <span class="location-tag">Pác Bó - Cao Bằng</span>
@@ -506,7 +545,13 @@
                 </div>
 
                 <div class="section" id="m9" data-loc="[21.0367, 105.8336]" data-zoom="15"
-                    data-images="https://image.nhandan.vn/w800/Uploaded/2026/xpviswda/2021_09_01/tuyenngon-1630485906660.jpg|https://file3.qdnd.vn/data/images/0/2020/09/01/vuhuyen/2-9-1945.jpg">
+                    data-images="media/images/moc9/a1.jpg|
+                    media/images/moc9/a2.jpg|
+                    media/images/moc9/a3.jpg|
+                    media/images/moc9/a4.jpg|
+                    media/images/moc9/a5.jpg|
+                    media/images/moc9/a6.jpg"
+                    data-video="media/videos/a1.mp4">
                     <div class="tag-box">
                         <span class="year">02/09/1945</span>
                         <span class="location-tag">Quảng trường Ba Đình</span>
@@ -525,7 +570,16 @@
                 </div>
 
                 <div class="section" id="m10" data-loc="[21.0285, 105.8542]" data-zoom="13"
-                    data-images="https://dangcongsan.vn/DATA/73/2021/12/loi_keu_goi_toan_quoc_khang_chien_1-18_20_00_908.jpg|https://media.vov.vn/sites/default/files/styles/large/public/2021-12/bq.jpg">
+                    data-images="media/images/moc10/a1.jpg|
+                    media/images/moc10/a2.jpg|
+                    media/images/moc10/a3.jpg|
+                    media/images/moc10/a4.jpg|
+                    media/images/moc10/a5.jpg|
+                    media/images/moc10/a6.jpg|
+                    media/images/moc10/a7.jpg|
+                    media/images/moc10/a8.jpg|
+                    media/images/moc10/a9.jpg"
+                    data-video="media/videos/a2.mp4">
                     <div class="tag-box">
                         <span class="year">Kháng chiến</span>
                         <span class="location-tag">Hà Nội / Toàn quốc</span>
@@ -577,21 +631,35 @@
         let activeSectionId = null;
         let isClicking = false;
 
-        function buildSliderHTML(imagesString) {
-            if (!imagesString) return { html: '', count: 0 };
-            const images = imagesString.split('|').filter(img => img.trim() !== '');
+        function buildSliderHTML(imagesString, videoUrl) {
+            const images = imagesString ? imagesString.split('|').filter(img => img.trim() !== '') : [];
             let html = '<div class="popup-slider" id="current-slider">';
+
             images.forEach((img, index) => {
                 const activeClass = index === 0 ? 'active' : '';
-                html += `<img class="${activeClass}" src="${img}" alt="Tư liệu" onerror="this.onerror=null; this.src='https://placehold.co/340x220/d32f2f/ffffff?text=Tu+Lieu';"/>`;
+                html += `<div class="slide-item ${activeClass}"><img src="${img}" alt="Tư liệu" onerror="this.onerror=null; this.src='https://placehold.co/340x220/d32f2f/ffffff?text=Tu+Lieu';"/></div>`;
             });
+
+            if (videoUrl) {
+                const activeClass = images.length === 0 ? 'active' : '';
+                html += `
+                    <div class="slide-item ${activeClass} video-slide">
+                        <video controls preload="metadata">
+                            <source src="${videoUrl}" type="video/mp4">
+                            Trình duyệt của bạn không hỗ trợ video.
+                        </video>
+                    </div>
+                `;
+            }
+
             html += '</div>';
-            return { html, count: images.length };
+            return { html, count: images.length, hasVideo: Boolean(videoUrl) };
         }
 
-        function startSliderAutoPlay(count) {
+        function startSliderAutoPlay(count, hasVideo) {
             clearInterval(sliderInterval);
-            if (count <= 1) return;
+            const totalSlides = count + (hasVideo ? 1 : 0);
+            if (totalSlides <= 1) return;
 
             let currentIndex = 0;
             sliderInterval = setInterval(() => {
@@ -600,11 +668,28 @@
                     clearInterval(sliderInterval);
                     return;
                 }
-                const images = slider.querySelectorAll('img');
-                if (images.length > 0) {
-                    images[currentIndex].classList.remove('active');
-                    currentIndex = (currentIndex + 1) % images.length;
-                    images[currentIndex].classList.add('active');
+                const slides = slider.querySelectorAll('.slide-item');
+                if (slides.length === 0) {
+                    clearInterval(sliderInterval);
+                    return;
+                }
+
+                slides.forEach(slide => slide.classList.remove('active'));
+                currentIndex += 1;
+                if (currentIndex >= slides.length) {
+                    currentIndex = slides.length - 1;
+                }
+
+                const activeSlide = slides[currentIndex];
+                if (activeSlide) {
+                    activeSlide.classList.add('active');
+                    const video = activeSlide.querySelector('video');
+                    if (video) {
+                        video.currentTime = 0;
+                        video.muted = true;
+                        video.play().catch(() => {});
+                        clearInterval(sliderInterval);
+                    }
                 }
             }, 2500);
         }
@@ -626,6 +711,7 @@
             const loc = JSON.parse(targetElement.getAttribute('data-loc'));
             const zoom = targetElement.getAttribute('data-zoom');
             const imgData = targetElement.getAttribute('data-images');
+            const videoUrl = targetElement.getAttribute('data-video');
             const titleText = targetElement.querySelector('h2').innerText;
 
             map.closePopup();
@@ -638,7 +724,7 @@
 
             popupTimer = setTimeout(() => {
                 if (activeSectionId === targetElement.id) {
-                    const sliderObj = buildSliderHTML(imgData);
+                    const sliderObj = buildSliderHTML(imgData, videoUrl);
                     const isMobile = window.innerWidth <= 768;
                     const popupWidth = isMobile ? 300 : 520;
 
@@ -651,7 +737,7 @@
                     </div>
                 `;  
                     marker.setPopupContent(popupContent).openPopup();
-                    setTimeout(() => { startSliderAutoPlay(sliderObj.count); }, 100);
+                    setTimeout(() => { startSliderAutoPlay(sliderObj.count, sliderObj.hasVideo); }, 100);
                 }
             }, 1600);
         }
@@ -754,6 +840,8 @@
                 autoFit: true,
                 initialExpandLevel: 1,
                 duration: 500,
+                spacingHorizontal: 120,
+                spacingVertical: 20,   
                 style: (id) => `${id} * { font-family: 'Inter', sans-serif; }`,
             }, root);
 
